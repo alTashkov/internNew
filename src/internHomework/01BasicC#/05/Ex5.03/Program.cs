@@ -5,7 +5,7 @@
         string[] validCards = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
         Console.Write("Enter a card sign: ");
         string s = Console.ReadLine()!;
-        while (s?.Length < 1 || s?.Length > 5)
+        while (s.Length < 1 || s?.Length > 5)
         {
             Console.WriteLine("The card sign must be [1;5]!");
             Console.Write("Enter a new card sign: ");
@@ -21,10 +21,9 @@
                 count++;
                 break;
             }
-            else
-            {
-                continue;
-            }
+
+            continue;
+            
         }
 
         if (count == 0)
