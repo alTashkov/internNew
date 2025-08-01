@@ -15,50 +15,51 @@
         int middle = 0;
         int smallest = 0;
 
-        if (n1 > n2)
+        if (n1 >= n2 && n1 >= n3)
         {
             largest = n1;
-            if (n3 > n1)
-            {
-                largest = n3;
-                middle = n1;
-                smallest = n2;
-            }
-            if (n2 <= n3 && largest == n1)
-            {
-                middle = n3;
-                smallest = n2;
-            }
-            if (n2 >= n3 && largest == n1)
+            if (n2 >= n3)
             {
                 middle = n2;
                 smallest = n3;
             }
-            
+            else
+            {
+                middle = n3;
+                smallest = n2;
+            }
         }
-        else if (n1 < n2)
+        else if (n2 >= n1 && n2 >= n3)
         {
             largest = n2;
-            if (n3 > n2)
-            {
-                largest = n3;
-                middle = n2;
-                smallest = n1;
-            }
-            if (n1 <= n3 && largest == n2)
-            {
-                middle = n3;
-                smallest = n1;
-            }
-            if (n1 >= n3 && largest == n2)
+            if (n1 >= n3)
             {
                 middle = n1;
                 smallest = n3;
             }
+            else
+            {
+                middle = n3;
+                smallest = n1;
+            }
+        }
+        else
+        {
+            largest = n3;
+            if (n1 >= n2)
+            {
+                middle = n1;
+                smallest = n2;
+            }
+            else
+            {
+                middle = n2;
+                smallest = n1;
+            }
         }
 
 
-            Console.Write($"Numbers descending: {largest},{middle},{smallest}");
+        Console.Write($"Numbers descending: {largest},{middle},{smallest}");
 
     }
 }
