@@ -8,23 +8,34 @@
         Console.Write("Enter text 2: ");
         string secondStr = Console.ReadLine();
 
-        firstStr.Replace(" ", "");
-        secondStr.Replace(" ", "");
+        char[] charNoSpaceOne = firstStr.Replace(" ", "").ToCharArray();
+        char[] charNoSpaceTwo = secondStr.Replace(" ", "").ToCharArray();
 
-        char[] charNoSpaceOne = firstStr.ToCharArray();
-        char[] charNoSpaceTwo = secondStr.ToCharArray();
+        int countOne = 0;
+        int countTwo = 0;
 
-        if (charNoSpaceTwo.Length == charNoSpaceOne.Length)
+        for (int i = 0; i < charNoSpaceOne.Length; i++)
         {
-            Console.WriteLine("=");
+            if (charNoSpaceOne[i] == charNoSpaceTwo[i])
+            {
+                if (charNoSpaceOne.Length - 1 == i)
+                {
+                    Console.WriteLine("The texts are identical.");
+                }
+                continue;
+            }
+            else if (charNoSpaceOne[i] > charNoSpaceTwo[i])
+            {
+                Console.WriteLine("First text is lexicographically greater.");
+                break;
+            }
+            else if (charNoSpaceOne[i] < charNoSpaceTwo[i])
+            {
+                Console.WriteLine("Second text is lexicographically greater.");
+                break;
+            }
+            
         }
-        else if (charNoSpaceOne.Length < charNoSpaceTwo.Length)
-        {
-            Console.WriteLine("<");
-        }
-        else
-        {
-            Console.WriteLine(">");
-        }
+
     }
-    }
+}
