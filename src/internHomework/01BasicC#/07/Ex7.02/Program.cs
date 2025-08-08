@@ -29,6 +29,7 @@
             if (arr1[i] != arr2[i])
             {
                 areSameArrays = false;
+                break;
             }
         }
 
