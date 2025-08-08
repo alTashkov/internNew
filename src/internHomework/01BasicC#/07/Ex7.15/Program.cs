@@ -38,16 +38,6 @@
 
         Console.WriteLine();
 
-        int primeNumbersNewSize = 0;
-
-        for (int i = 0; i < primeNumbers.Count; i++)
-        {
-            if (primeNumbers[i] != 0)
-            {
-                primeNumbersNewSize++;
-            }
-        }
-
         Console.WriteLine("Largest prime from given numbers: " + primeNumbers[primeNumbers.Count - 1]);
     }
 }
