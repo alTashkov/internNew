@@ -1,0 +1,5 @@
+4 times: suitcase
+2 times: phone
+1 times: dog
+1 times: cat
+0 times: pencil
