@@ -43,10 +43,6 @@
                 emailIdx++;
             }
             subStringIdx++;
-        }
-
-        
-
-        
+        }  
     }
 }

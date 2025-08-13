@@ -22,6 +22,10 @@
             }
             Console.Write("< 100");
         }
+        catch (FormatException e)
+        {
+            Console.WriteLine(e.Message.ToString());
+        }
         catch (Exception e)
         {
             Console.WriteLine(e.Message.ToString());

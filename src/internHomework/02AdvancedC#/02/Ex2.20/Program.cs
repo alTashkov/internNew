@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        string text = "I have a friend named Hannah who loves to tell stories. ABBA She once told me a tale about a racecar driver who was so fast, he'd often say, \"I can't wait to get back in that racecar!\" She's a bit of a jokester and sometimes her stories are a bit silly.";
+        string text = "I have a friend named Hannah who loves to tell errrre. ABBA She once told me a tale about a racecar driver who was so fast, he'd often say, \"I can't wait to get back in that racecar!\" She's a bit of a jokester and sometimes her stories are a bit silly.";
 
         string[] subStrings = text.Split(' ');
 
