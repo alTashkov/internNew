@@ -49,7 +49,7 @@ struct Point3D
     }
 }
 
-class Program
+internal class Program
 {
     static void Main()
     {

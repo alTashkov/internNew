@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace School
 {
-    class Program
+    class People
     {
-        static void Main(string[] args)
+        private string name;
+        public string Name
         {
+            get { return name; }
+            set { name = value; }
         }
     }
 }
