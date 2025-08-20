@@ -14,6 +14,7 @@ namespace Ex5._03
             Age = age;
             IsMale = false;
         }
+
         public override void MakeSound()
         {
             Console.WriteLine("Soft Meow!");

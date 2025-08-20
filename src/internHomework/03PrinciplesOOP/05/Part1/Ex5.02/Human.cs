@@ -10,6 +10,5 @@ namespace Ex5._02
     {
         public abstract string FirstName { get; set; }
         public abstract string LastName { get; set; }
-
     }
 }

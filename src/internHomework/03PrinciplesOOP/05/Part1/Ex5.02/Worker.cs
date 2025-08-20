@@ -10,6 +10,7 @@ namespace Ex5._02
     {
         private string firstName;
         private string lastName;
+
         public override string FirstName
         {
             get { return firstName; }
@@ -22,6 +23,7 @@ namespace Ex5._02
                 firstName = value;
             }
         }
+
         public override string LastName
         {
             get { return lastName; }
@@ -43,6 +45,7 @@ namespace Ex5._02
             FirstName = firstName;
             LastName = lastName;
         }
+
         public Worker(string firstName, string lastName, double weekSalary, double workHoursPerDay)
         {
             FirstName = firstName;

@@ -14,6 +14,7 @@ namespace Ex5._03
             Age = age;
             IsMale = true;
         }
+
         public override void MakeSound()
         {
             Console.WriteLine("Loud YOWL!");
