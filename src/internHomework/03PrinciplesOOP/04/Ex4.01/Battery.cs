@@ -17,7 +17,6 @@ namespace Ex4._01
             NiMH,
             NiCd
         }
-
         public Battery(string model, double hoursIdle, double hoursTalk)
         {
             this.Model = model;

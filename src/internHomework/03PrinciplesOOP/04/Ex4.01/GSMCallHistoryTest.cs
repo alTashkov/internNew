@@ -53,7 +53,6 @@ namespace Ex4._01
             Console.WriteLine("Call history cleared: ");
             gsm.ClearCalls();
             gsm.PrintCallHistory();
-
         }
     }
 }

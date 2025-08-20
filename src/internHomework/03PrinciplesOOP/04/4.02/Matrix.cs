@@ -92,7 +92,6 @@ namespace _4._02
                     {
                         multiplied.matrix[i, j] += left.matrix[i, k] * right.matrix[k, j];
                     }
-
                 }
             }
             return multiplied;

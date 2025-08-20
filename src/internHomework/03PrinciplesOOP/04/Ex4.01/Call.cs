@@ -32,7 +32,6 @@ namespace Ex4._01
                 this.callDurationSeconds = value;
             }
         }
-
         public Call() { }
 
         public Call(DateTime dateTimeOfCall, string phoneDialed, long callDuration)
@@ -52,5 +51,4 @@ namespace Ex4._01
             return calculatedPrice;
         }
     }
-
 }

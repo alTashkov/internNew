@@ -13,7 +13,6 @@ class GSM
     private static readonly GSM iPhone4S = new GSM("iPhone4S", "Apple", 1500.00, new Display(5,160000));
 
     private List<Call> callHistory = new List<Call>();
-
     public GSM() { }
     public GSM(string model, string manufacturer) 
     {
@@ -97,7 +96,6 @@ class GSM
     {
         this.callHistory.Clear();
     }
-
     public void PrintCallHistory()
     {
         for (int i = 0; i < this.callHistory.Count; i++)
