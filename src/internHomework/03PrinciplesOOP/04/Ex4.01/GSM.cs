@@ -2,66 +2,87 @@
 
 public class GSM
 {
+    private string model;
 
     private string manufacturer;
-    public string Model { get; set; }
-    public string Manufacturer { get; set; }
-    public double Price { get; set; }
-    public string Owner { get; }
+
+    private double? price;
+
+    private string owner;
 
     private Battery battery;
+
     private Display display;
 
-    private static readonly GSM iPhone4S = new GSM("iPhone4S", "Apple", 1500.00, new Display(5,160000));
-
     private List<Call> callHistory = new List<Call>();
-    public GSM() { }
-    public GSM(string model, string manufacturer2) 
+
+    private static readonly GSM iPhone4S = new GSM("iPhone4S", "Apple", 1500.00, new Display(5, 160000));
+
+    public string Manufacturer
     {
-        Model = model;
-        manufacturer = manufacturer2;
+        get { return manufacturer; }
     }
 
-    public GSM(string model, string manufacturer, double price)
+    public double? Price
     {
-        Model = model;
-        Manufacturer = manufacturer;
-        Price = price;
+        get { return price; }
+        set { price = value; }
     }
 
-    public GSM(string model, string manufacturer, double price, Display display)
+    public string Owner
     {
-        Model = model;
-        Manufacturer = manufacturer;
-        Price = price;
-        this.display = display;
+        get { return owner; }
+        set { owner = value; }
     }
 
-    public GSM(string model, string manufacturer, double price, double displaySize, Battery battery)
-    {
-        this.Model = model;
-        this.Manufacturer = manufacturer;
-        this.Price = price;
-        this.battery = battery;
-    }
-    public GSM(string model, string manufacturer, double price, double displaySize, Battery battery, Display display)
-    {
-        this.Model = model;
-        this.Manufacturer = manufacturer;
-        this.Price = price;
-        this.battery = battery;
-        this.display = display;
-    }
     public Battery Battery
     {
         get { return battery; }
-        set {  battery = value; }
+        set { battery = value; }
     }
 
     public Display Display
     {
         get { return display; }
         set { display = value; }
+    }
+
+    public GSM() { }
+    public GSM(string model, string manufacturer2) 
+    {
+        this.model = model;
+        manufacturer = manufacturer2;
+    }
+
+    public GSM(string model, string manufacturer, double price)
+    {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.price = price;
+    }
+
+    public GSM(string model, string manufacturer, double price, Display display)
+    {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.display = display;
+    }
+
+    public GSM(string model, string manufacturer, double price, double displaySize, Battery battery)
+    {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.price = price;
+        this.battery = battery;
+    }
+    public GSM(string model, string manufacturer, double price, double displaySize, Battery battery, Display display)
+    {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.Price = price;
+        this.battery = battery;
+        this.display = display;
     }
 
     public static GSM IPhone4S
@@ -71,40 +92,41 @@ public class GSM
 
     public List<Call> CallHistory
     {
-        get { return this.callHistory; }
+        get { return callHistory; }
     }
 
     public void PrintGSM()
     {
-        Console.WriteLine("GSM:\n" + $"Model: {this.Model}\nManufacturer: {this.Manufacturer}\nPrice: {this.Price} lv." +
-            $"\nDisplay size: {this.display.Size} inch");
+        Console.WriteLine("GSM:\n" + $"Model: {model}\nManufacturer: {manufacturer}\nPrice: {price} lv." +
+            $"\nDisplay size: {display.Size} inch");
     }
 
     public override string ToString()
     {
-        return "GSM:\n" + $"Model: {this.Model}\nManufacturer: {this.Manufacturer}\nPrice: {this.Price} lv." +
-            $"\nDisplay size: {this.display.Size} inch";
+        return "GSM:\n" + $"Model: {model}\nManufacturer: {manufacturer}\nPrice: {price} lv." +
+            $"\nDisplay size: {display.Size} inch"); ;
     }
 
     public void AddCall(Call call)
     {
-        this.callHistory.Add(call);
+        callHistory.Add(call);
     }
 
     public void DeleteCall(Call call)
     {
-        this.callHistory.Remove(call);
+        callHistory.Remove(call);
     }
 
     public void ClearCalls()
     {
-        this.callHistory.Clear();
+        callHistory.Clear();
     }
+
     public void PrintCallHistory()
     {
-        for (int i = 0; i < this.callHistory.Count; i++)
+        for (int i = 0; i < callHistory.Count; i++)
         {
-            Call call = this.callHistory[i];
+            Call call = callHistory[i];
 
             Console.WriteLine(call.ToString());
             Console.WriteLine();

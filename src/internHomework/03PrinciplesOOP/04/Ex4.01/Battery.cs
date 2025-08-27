@@ -2,20 +2,36 @@
 {
     public class Battery
     {
-        public string Model;
-        public double HoursIdle;
-        public double HoursTalk;
-        public enum BatteryType
+        private string model;
+
+        private double? hoursIdle;
+
+        private double? hoursTalk;
+
+        private BatteryType batteryType;
+
+        public string Model
         {
-            LiIon,
-            NiMH,
-            NiCd
+            get { return model; }
+            set { model = value; }
         }
-        public Battery(string model, double hoursIdle, double hoursTalk)
+
+        public double? HoursIdle
         {
-            this.Model = model;
-            this.HoursIdle = hoursIdle;
-            this.HoursTalk = hoursTalk;
+            get { return hoursIdle; }
+            set { hoursIdle = value; }
+        }
+
+        public double? HoursTalk
+        {
+            get { return hoursTalk; }
+            set { hoursTalk = value; }
+        }
+
+        public BatteryType BatteryType
+        {
+            get { return batteryType; }
+            set { batteryType = value; }
         }
     }
 }

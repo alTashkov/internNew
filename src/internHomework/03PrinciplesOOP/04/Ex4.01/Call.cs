@@ -1,38 +1,40 @@
 ﻿namespace Ex4._01
 {
-    internal class Call
+    public class Call
     {
         private DateTime dateTimeOfCall;
+
         private string phoneDialed;
+
         private long callDurationSeconds;
         public DateTime DateTimeOfCall
         {
-            get { return this.DateTimeOfCall; }
-            set { this.DateTimeOfCall = value; }
+            get { return dateTimeOfCall; }
+            set { dateTimeOfCall = value; }
         }
         public string PhoneDialed
         {
-            get { return this.phoneDialed; }
+            get { return phoneDialed; }
             set
             {
-                this.phoneDialed = value;
+                phoneDialed = value;
             }
         }
         public long CallDurationSeconds
         {
-            get { return this.callDurationSeconds; }
+            get { return callDurationSeconds; }
             set
             {
-                this.callDurationSeconds = value;
+                callDurationSeconds = value;
             }
         }
         public Call() { }
 
-        public Call(DateTime dateTimeOfCall, string phoneDialed, long callDuration)
+        public Call(DateTime dateTimeOfCall, string phoneDialed, long callDurationSeconds)
         {
             this.dateTimeOfCall = dateTimeOfCall;
             this.phoneDialed = phoneDialed;
-            this.callDurationSeconds = callDuration;
+            this.callDurationSeconds = callDurationSeconds;
         }
 
         public override string ToString()

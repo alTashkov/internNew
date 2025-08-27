@@ -2,12 +2,26 @@
 {
     public class Display
     {
-        public double Size;
-        public long NumberOfColors;
-        public Display(double size, long numberOfColors)
+        private double? size;
+
+        private long? numberOfColors;
+
+        public double? Size
         {
-            this.Size = size;
-            this.NumberOfColors = numberOfColors;
+            get { return size; }
+            set { size = value; }
+        }
+
+        public long? NumberOfColors
+        {
+            get { return numberOfColors; }
+            set { numberOfColors = value; }
+        }
+
+        public Display(double? size, long? numberOfColors)
+        {
+            this.size = size;
+            this.numberOfColors = numberOfColors;
         }
     }
 }

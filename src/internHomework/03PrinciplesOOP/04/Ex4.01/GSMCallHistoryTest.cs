@@ -1,6 +1,6 @@
 ﻿namespace Ex4._01
 {
-    internal class GSMCallHistoryTest
+    public class GSMCallHistoryTest
     {
         static void Main()
         {
