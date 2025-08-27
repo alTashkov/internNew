@@ -1,10 +1,4 @@
 ﻿using _2Ex6._01._2Ex5._03;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace _2Ex6._01
 {
     class Program

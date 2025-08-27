@@ -1,32 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2Ex5._02
+﻿namespace _2Ex5._02
 {
     class DepositAccount : Account, IDeposit, IWithdraw
     {
+        private long balance;
+
+        private double interestRate;
+
+        private Customer customer;
+
+        public override long Balance 
+        { 
+            get { return balance; }
+            set { balance = value; }
+        }
+
+        public override double InterestRate 
+        {
+            get { return interestRate; }
+            set { interestRate = value; }
+        }
+
+        public override Customer AccountCustomer 
+        {
+            get { return customer; }
+            set { customer = value; }
+        }
+
         public DepositAccount(Customer customer)
         {
-            AccountCustomer = customer;
+            this.customer = customer;
         }
         public void Withdraw(double amount)
         {
-            Balance -= (long)amount;
+            balance -= (long)amount;
         }
         public override double CalculateInterestAmount(double numberOfMonths)
         {
             if (!(Balance <= 0 || Balance > 1000))
             {
-                InterestRate = 0;
+                interestRate = 0;
             }
-            return InterestRate * numberOfMonths;
+            return interestRate * numberOfMonths;
         }
         public void Deposit(double amount)
         {
-            Balance += (long)amount;
+            balance += (long)amount;
         }
     }
 }

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ex4._01
+﻿namespace Ex4._01
 {
     internal class GSMCallHistoryTest
     {
         static void Main()
         {
             GSM gsm = new GSM();
+            
             Call call1 = new Call(new DateTime(2005, 04, 24), "+359 882 855 688", 501);
             Call call2 = new Call(new DateTime(2025, 04, 02), "+359 722 845 438", 1532);
             Call call3 = new Call(new DateTime(2012, 03, 02), "+359 722 845 438", 104);

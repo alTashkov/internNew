@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2Ex5._02
+﻿namespace _2Ex5._02
 {
     class Individual : Customer
     {
+        private string customerName;
+        public override string CustomerName 
+        {
+            get { return customerName; }
+            set { customerName = value; }
+        }
         public Individual(string firstName, string lastName) 
         {
-            CustomerName = firstName + " " + lastName;
+            customerName = firstName + " " + lastName;
         }
+        
     }
 }

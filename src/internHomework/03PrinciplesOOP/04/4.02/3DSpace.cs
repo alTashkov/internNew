@@ -10,8 +10,8 @@ namespace _4._02
     {
         public static double CalculateDistanceBetweenTwoPoints(Point3D point1, Point3D point2)
         {
-            return (Math.Sqrt((point2.x -  point1.x) * (point2.x - point1.x) + 
-                (point2.y - point1.y) * (point2.z - point1.z)));
+            return (Math.Sqrt((point2.X -  point1.X) * (point2.X - point1.X) + 
+                (point2.Y - point1.Y) * (point2.Z - point1.Z)));
         }
     }
 }

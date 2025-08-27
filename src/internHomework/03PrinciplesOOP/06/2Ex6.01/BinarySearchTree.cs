@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2Ex6._01
+﻿namespace _2Ex6._01
 {
     class BinarySearchTree : ICloneable
     {
-        public Node Root { get; set; }
+        private Node root;
+
+        public Node Root
+        {
+            get { return root; }
+            set { root = value; }
+        }
         public void AddElement(int el)
         {
-            if (Root == null) Root = new Node(el);
+            if (root == null) root = new Node(el);
             else AddElement(Root, el);
         }
 
@@ -37,11 +37,11 @@ namespace _2Ex6._01
 
         public Node Search(int el)
         {
-            if (Root == null)
+            if (root == null)
             {
                 return null;
             }
-            else return Search(Root,el);
+            else return Search(root,el);
         }
 
         public Node Search(Node root, int el)
@@ -67,7 +67,7 @@ namespace _2Ex6._01
 
         public void Delete(int el)
         {
-            Root = Delete(Root, el);
+            root = Delete(root, el);
         }
 
         public Node Delete(Node root, int el)
@@ -124,7 +124,7 @@ namespace _2Ex6._01
         public object Clone()
         {
             BinarySearchTree clone = new BinarySearchTree();
-            clone.Root = CloneNode(this.Root);
+            clone.root = CloneNode(root);
             return clone;
         }
 
@@ -155,7 +155,7 @@ namespace _2Ex6._01
                 Traverse(node.RightNode);
             }
 
-            Traverse(Root);
+            Traverse(root);
 
             return string.Join(", ", elements);
         }
@@ -163,7 +163,7 @@ namespace _2Ex6._01
         public override bool Equals(object obj)
         {
             if (obj is BinarySearchTree other)
-                return AreEqual(this.Root, other.Root);
+                return AreEqual(root, other.root);
 
             return false;
         }
@@ -179,7 +179,7 @@ namespace _2Ex6._01
 
         public override int GetHashCode()
         {
-            return Root?.GetHashCode() ?? 0;
+            return root?.GetHashCode() ?? 0;
         }
 
         public static bool operator ==(BinarySearchTree b1, BinarySearchTree b2)

@@ -1,71 +1,96 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace School
 {
-    class Class
+    class Class : IHaveComments
     {
-        private string UniqueIdentifier { get; }
-        private string Comments { get; set; }
+        private string comments;
 
-        private HashSet<Student> Students;
+        private string uniqueIdentifier;
 
-        private HashSet<Teacher> Teachers;
+        private HashSet<Student> students;
+
+        private HashSet<Teacher> teachers;
+
+        public string UniqueIdentifier {
+            get { return uniqueIdentifier; }
+            private set { uniqueIdentifier = value; }
+        }
+
+        public string Comments {
+            get {  return comments; }
+        }
+
+        public HashSet<Student> Students
+        {
+            get { return students; }
+            private set { students = value; }
+        }
+
+        public HashSet<Teacher> Teachers
+        {
+            get { return teachers; }
+            private set { teachers = value; }
+        }
+
         public Class(string uniqueId)
         {
             UniqueIdentifier = uniqueId;
-            Teachers = new HashSet<Teacher>();
-            Students = new HashSet<Student>();
+            teachers = new HashSet<Teacher>();
+            students = new HashSet<Student>();
         }
         public Class(string uniqueId, HashSet<Teacher> teachers)
         {
             UniqueIdentifier = uniqueId;
-            Teachers = teachers;
-            Students = new HashSet<Student>();
+            this.teachers = teachers;
+            students = new HashSet<Student>();
         }
         public Class(string uniqueId, HashSet<Teacher> teachers, HashSet<Student> students)
         {
             UniqueIdentifier = uniqueId;
-            Teachers = teachers;
-            Students = students;
+            this.teachers = teachers;
+            this.students = students;
         }
         public void AddTeacher(Teacher teacher)
         {
-            if (Teachers.Contains(teacher))
+            if (teachers.Contains(teacher))
             {
                 throw new ArgumentException("This teacher is already teaching this student!");
             }
-            Teachers.Add(teacher);
+            teachers.Add(teacher);
         }
 
         public void RemoveTeacher(Teacher teacher)
         {
-            if (!Teachers.Contains(teacher))
+            if (!teachers.Contains(teacher))
             {
                 throw new ArgumentException("This teacher doesn't teach this student!");
             }
-            Teachers.Remove(teacher);
+            teachers.Remove(teacher);
         }
 
         public void AddStudent(Student student)
         {
-            if (Students.Contains(student))
+            if (students.Contains(student))
             {
                 throw new ArgumentException("This teacher doesn't teach this student!");
             }
-            Students.Add(student);
+            students.Add(student);
         }
 
         public void RemoveStudent(Student student)
         {
-            if (!Students.Contains(student))
+            if (!students.Contains(student))
             {
                 throw new ArgumentException("This teacher doesn't teach this student!");
             }
-            Students.Add(student);
+            students.Add(student);
+        }
+
+        public void AddComments(string comments)
+        {
+            this.comments = comments;
         }
     }
 }

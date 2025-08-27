@@ -1,18 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2Ex5._01
+﻿namespace _2Ex5._01
 {
     class Square : Shape
     {
+        private int width;
+        private int height;
+        
+        public override int Width
+        {
+            get { return width; }
+            set { width = value; }
+        }
+
+        public override int Height
+        {
+            get { return height; }
+            set { height = width; }
+        }
+
         public Square(int width)
         {
-            Width = width;
-            Height = width;
+            this.width = width;
+            height = width;
         }
         public override int CalculateSurface()
         {

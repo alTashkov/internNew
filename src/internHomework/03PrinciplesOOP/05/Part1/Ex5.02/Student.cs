@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex5._02
 {
@@ -10,6 +7,7 @@ namespace Ex5._02
     {
         private string firstName;
         private string lastName;
+
         private int grade;
 
         public override string FirstName 
@@ -66,6 +64,5 @@ namespace Ex5._02
             LastName = lastName;
             this.Grade = grade;
         }
-
     }
 }

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2Ex6._01
+﻿namespace _2Ex6._01
 {
     class Person
     {
         private string name;
+
         private int? age = null;
 
         public string Name

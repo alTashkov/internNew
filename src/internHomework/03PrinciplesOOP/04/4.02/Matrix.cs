@@ -1,30 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Numerics;
 
 namespace _4._02
 {
     [VersionAttribute(1, 0)]
     class Matrix<T> where T : INumber<T>
     {
-        private int Rows { get; set; }
-        private int Columns { get; set; }
-        T[,] matrix;
+        private int rows;
+
+        private int columns;
+
+        private T[,] matrix;
+
         public Matrix(int rows, int columns)
         {
-            this.Rows = rows;
-            this.Columns = columns;
-            matrix = new T[Rows, Columns];
+            this.rows = rows;
+            this.columns = columns;
+            matrix = new T[rows, columns];
         }
 
         public T this[int indexRows, int indexCols]
         {
             get
             {
-                if (indexRows > Rows || indexCols > Columns)
+                if (indexRows > rows || indexCols > columns)
                 {
                     throw new ArgumentOutOfRangeException("Index is out of bounds!");
                 }
@@ -32,7 +30,7 @@ namespace _4._02
             }
             set
             {
-                if (indexRows > Rows || indexCols > Columns)
+                if (indexRows > rows || indexCols > columns)
                 {
                     throw new ArgumentOutOfRangeException("Index is out of bounds!");
                 }
@@ -42,15 +40,15 @@ namespace _4._02
 
         public static Matrix<T> operator + (Matrix<T> left, Matrix<T> right)
         {
-            if (left.Rows != right.Rows || left.Columns != right.Columns)
+            if (left.rows != right.rows || left.columns != right.columns)
             {
                 throw new ArgumentException("Sizes of matrices have to be equal!");
             }
-            Matrix<T> added = new Matrix<T>(left.Rows, right.Columns);
+            Matrix<T> added = new Matrix<T>(left.rows, right.columns);
 
-            for (int i = 0; i < left.Rows; i++)
+            for (int i = 0; i < left.rows; i++)
             {
-                for (int j = 0; j < right.Rows; j++)
+                for (int j = 0; j < right.rows; j++)
                 {
                     added.matrix[i, j] = left.matrix[i, j] + right.matrix[i, j];
                 }
@@ -61,15 +59,15 @@ namespace _4._02
 
         public static Matrix<T> operator - (Matrix<T> left, Matrix<T> right)
         {
-            if (left.Rows != right.Rows || left.Columns != right.Columns)
+            if (left.rows != right.rows || left.columns != right.columns)
             {
                 throw new ArgumentException("Sizes of matrices have to be equal!");
             }
-            Matrix<T> subtracted = new Matrix<T>(left.Rows, right.Columns);
+            Matrix<T> subtracted = new Matrix<T>(left.rows, right.columns);
 
-            for (int i = 0; i < left.Rows; i++)
+            for (int i = 0; i < left.rows; i++)
             {
-                for (int j = 0; j < right.Rows; j++)
+                for (int j = 0; j < right.rows; j++)
                 {
                     subtracted.matrix[i, j] = left.matrix[i, j] - right.matrix[i, j];
                 }
@@ -79,16 +77,16 @@ namespace _4._02
         }
         public static Matrix<T> operator * (Matrix<T> left, Matrix<T> right)
         {
-            if (left.Rows != right.Rows || left.Columns != right.Columns)
+            if (left.rows != right.rows || left.columns != right.columns)
             {
                 throw new ArgumentException("Sizes of matrices have to be equal!");
             }
-            Matrix<T> multiplied = new Matrix<T>(left.Rows, right.Columns);
-            for (int i = 0; i < left.Rows; i++)
+            Matrix<T> multiplied = new Matrix<T>(left.rows, right.columns);
+            for (int i = 0; i < left.rows; i++)
             {
-                for (int j = 0; j < right.Columns; j++)
+                for (int j = 0; j < right.columns; j++)
                 {
-                    for (int k = 0; k < left.Columns; k++)
+                    for (int k = 0; k < left.columns; k++)
                     {
                         multiplied.matrix[i, j] += left.matrix[i, k] * right.matrix[k, j];
                     }
@@ -99,9 +97,9 @@ namespace _4._02
         
         public static bool operator true (Matrix<T> matrix)
         {
-            for (int i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.rows; i++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
+                for (int j = 0; j < matrix.columns; j++)
                 {
                     if (!(matrix[i,j].Equals(default(T))))
                     {

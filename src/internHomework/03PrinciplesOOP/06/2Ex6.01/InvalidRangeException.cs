@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2Ex6._01
+﻿namespace _2Ex6._01
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     namespace _2Ex5._03
     {
         class InvalidRangeException<T> : Exception where T : IComparable<T>

@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Ex5._02
 {
     class Worker : Human
     {
         private string firstName;
         private string lastName;
+
+        private double weekSalary;
+        private double workHoursPerDay;
 
         public override string FirstName
         {
@@ -37,26 +35,44 @@ namespace Ex5._02
             }
         }
 
-        public double WeekSalary = 0;
-        public double WorkHoursPerDay = 0;
+        public double WeekSalary { 
+            get
+            {
+                return weekSalary;
+            }
+            set
+            {
+                weekSalary = value;
+            }
+        }
+        public double WorkHoursPerDay {  
+            get
+            {
+                return workHoursPerDay;
+            }
+            set
+            {
+                workHoursPerDay = value;
+            }
+        }
 
         public Worker(string firstName, string lastName)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            this.firstName = firstName;
+            this.lastName = lastName;
         }
 
         public Worker(string firstName, string lastName, double weekSalary, double workHoursPerDay)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            WeekSalary = weekSalary;
-            WorkHoursPerDay = workHoursPerDay;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.weekSalary = weekSalary;
+            this.workHoursPerDay = workHoursPerDay;
         }
 
         public double MoneyPerHour()
         {
-            return WeekSalary / (5 * WorkHoursPerDay);
+            return weekSalary / (5 * workHoursPerDay);
         }
     }
 }

@@ -1,21 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _2Ex6._01
+﻿namespace _2Ex6._01
 {
     class Node
     {
-        public Node LeftNode { get; set; }
-        public Node RightNode { get; set; }
+        private Node leftNode;
+        
+        private Node rightNode;
 
-        public int Data { get; set; }
+        private int data;
+
+        public Node LeftNode
+        {
+            get { return leftNode; }
+            set { leftNode = value; }
+        }
+        public Node RightNode
+        {
+            get { return rightNode; }
+            set { rightNode = value; }
+        }
+
+        public int Data
+        {
+            get { return data; }
+            set { data = value; }
+        }
 
         public Node(int x)
         {
-            Data = x;
+            data = x;
         }
     }
 }

@@ -1,11 +1,13 @@
 ﻿using Ex4._01;
 
-class GSM
+public class GSM
 {
-    private string Model { get; set; }
-    private string Manufacturer { get; init; }
-    double Price { get; set; }
-    string? Owner { get; }
+
+    private string manufacturer;
+    public string Model { get; set; }
+    public string Manufacturer { get; set; }
+    public double Price { get; set; }
+    public string Owner { get; }
 
     private Battery battery;
     private Display display;
@@ -14,24 +16,24 @@ class GSM
 
     private List<Call> callHistory = new List<Call>();
     public GSM() { }
-    public GSM(string model, string manufacturer) 
+    public GSM(string model, string manufacturer2) 
     {
-        this.Model= model;
-        this.Manufacturer = manufacturer;
+        Model = model;
+        manufacturer = manufacturer2;
     }
 
     public GSM(string model, string manufacturer, double price)
     {
-        this.Model = model;
-        this.Manufacturer = manufacturer;
-        this.Price = price;
+        Model = model;
+        Manufacturer = manufacturer;
+        Price = price;
     }
 
     public GSM(string model, string manufacturer, double price, Display display)
     {
-        this.Model = model;
-        this.Manufacturer = manufacturer;
-        this.Price = price;
+        Model = model;
+        Manufacturer = manufacturer;
+        Price = price;
         this.display = display;
     }
 
@@ -52,12 +54,14 @@ class GSM
     }
     public Battery Battery
     {
-        get { return this.Battery; }
+        get { return battery; }
+        set {  battery = value; }
     }
 
     public Display Display
     {
-        get { return this.Display; }
+        get { return display; }
+        set { display = value; }
     }
 
     public static GSM IPhone4S

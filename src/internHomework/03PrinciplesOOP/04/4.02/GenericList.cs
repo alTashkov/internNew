@@ -10,8 +10,11 @@ namespace _4._02
     class GenericList<T> : List<T>
     {
         private T[] array;
+
         private int currentSize;
+
         private int count = 0;
+
         public void AddElement(T element)
         {
             if (count + 1 > array.Length)
@@ -20,6 +23,7 @@ namespace _4._02
             }
             array[count++] = element;
         }
+
         public void RemoveByIndex(int index)
         {
             if (index < 0 || index >= count)
@@ -30,7 +34,7 @@ namespace _4._02
             for (int i = index; i < count - 1; i++)
                 array[i] = array[i + 1];
 
-            array[--count] = default(T);
+            array[--count] = default;
         }
 
         public void InsertAtIndex(int index, T element)
@@ -60,7 +64,6 @@ namespace _4._02
                 throw new ArgumentException("Given value was not found in the list!");
             }
 
-            int index = 0;
             for (int i = 0; i < array.Length - 1; i++)
             {
                 if (array[i].Equals(value))
@@ -85,6 +88,7 @@ namespace _4._02
                 array[index] = value; 
             }
         }
+
         private void AutoGrow()
         {
             int newSize = array.Length * 2;

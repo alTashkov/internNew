@@ -16,7 +16,7 @@ namespace _4._02
             {
                 writer.WriteLine(path3D);
             }
-            Console.WriteLine("Path saved successfully!");
+            Console.WriteLine("Path was saved successfully!");
         }
 
         public static void LoadPathFromFile(Path3D path3D,string filePath)
@@ -29,7 +29,7 @@ namespace _4._02
                     path3D.Points.Add(new Point3D(contents[i]));
                 }
             }
-            Console.WriteLine("Path loaded successfuly!");
+            Console.WriteLine("Path was loaded successfuly!");
         }
     }
 }

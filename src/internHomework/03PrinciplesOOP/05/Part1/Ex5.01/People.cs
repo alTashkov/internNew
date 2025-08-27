@@ -1,18 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace School
+﻿namespace School
 {
-    class People
+    abstract class People : IHaveComments
     {
         private string name;
+
+        private string comments;
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
+
+        public string Comments
+        {
+            get { return comments; }
+        }
+
+        public void AddComments(string comments) 
+        {
+            this.comments = comments;
+        }
+
     }
 }
