@@ -104,7 +104,7 @@ public class GSM
     public override string ToString()
     {
         return "GSM:\n" + $"Model: {model}\nManufacturer: {manufacturer}\nPrice: {price} lv." +
-            $"\nDisplay size: {display.Size} inch"); ;
+            $"\nDisplay size: {display.Size} inch";
     }
 
     public void AddCall(Call call)

@@ -1,4 +1,5 @@
-﻿namespace Ex5._03
+﻿using System;
+namespace Ex5._03
 {
     class Kitten : Animal
     {
