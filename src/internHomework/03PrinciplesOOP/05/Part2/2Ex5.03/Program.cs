@@ -6,16 +6,15 @@ namespace _2Ex5._03
     {
         static void Main(string[] args)
         {
-            int[] array = new int[10];
-            int start = 0;
-            int end = 0;
+            int start;
+            int end;
 
             Random rnd = new Random();
             try
             {
-                start = rnd.Next(1,20);
-                end = rnd.Next(1,10);
-                if (start > end)
+                start = rnd.Next(-20,20);
+                end = rnd.Next(70,200);
+                if (start < 1 || end > 100)
                 {
                     throw new InvalidRangeException<int>(start, end);
                 }
@@ -39,7 +38,6 @@ namespace _2Ex5._03
             {
                 Console.WriteLine(e.Message);
             }
-            
         }
     }
 }

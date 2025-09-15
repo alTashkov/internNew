@@ -2,17 +2,9 @@
 {
     class Company : Customer
     {
-        private string customerName;
-
-        public override string CustomerName
-        {
-            get { return customerName; }
-            set { customerName = value; }
-        }
-
         public Company(string companyName) 
         {
-            customerName = companyName;
+            CustomerName = companyName;
         }
     }
 }

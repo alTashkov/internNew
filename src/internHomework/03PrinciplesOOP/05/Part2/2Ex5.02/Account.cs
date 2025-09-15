@@ -2,11 +2,11 @@
 {
     public abstract class Account
     {
-        public abstract long Balance { get; set; }
+        public decimal Balance { get; protected set; }
 
-        public abstract double InterestRate { get; set; }
+        public double InterestRate { get; protected set; }
 
-        public abstract Customer AccountCustomer { get; set; }
+        public Customer AccountCustomer { get; protected set; }
 
         public abstract double CalculateInterestAmount(double numberOfMonths);
     }

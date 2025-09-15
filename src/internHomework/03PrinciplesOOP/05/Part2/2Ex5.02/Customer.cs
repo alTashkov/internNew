@@ -2,7 +2,7 @@
 {
     public abstract class Customer
     {
-        public abstract string CustomerName { get; set; }
+        public string CustomerName { get; protected set; }
 
     }
 }

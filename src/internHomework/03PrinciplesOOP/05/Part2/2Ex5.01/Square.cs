@@ -2,27 +2,12 @@
 {
     class Square : Shape
     {
-        private int width;
-        private int height;
-        
-        public override int Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
-
-        public override int Height
-        {
-            get { return height; }
-            set { height = width; }
-        }
-
         public Square(int width)
         {
-            this.width = width;
-            height = width;
+            Width = width;
+            Height = width;
         }
-        public override int CalculateSurface()
+        public override double CalculateSurface()
         {
             return Height * Width;
         }

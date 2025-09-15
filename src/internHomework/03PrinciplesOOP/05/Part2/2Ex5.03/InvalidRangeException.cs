@@ -4,15 +4,9 @@ namespace _2Ex5._03
 {
     class InvalidRangeException<T> : Exception where T : IComparable<T>
     {
-        private string _message;
-
         public InvalidRangeException(T start, T end)
+            : base(message: $"Invalid Range!. One or both bounds of [{start.ToString()} ; {end.ToString()}] are outside of given range!")
         {
-            _message = $"Invalid Range!. Start value {start.ToString()} cannot be greater than end value {end.ToString()}!";
-        }
-
-        public override string Message {
-            get { return _message; }
         }
     }
 }

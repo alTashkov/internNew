@@ -2,29 +2,14 @@
 {
     class Triangle : Shape
     {
-        private int width;
-        private int height;
-
-        public override int Width
-        {
-            get { return width; }
-            set { width = value; }
-        }
-
-        public override int Height
-        {
-            get { return height; }
-            set { height = value; }
-        }
-
         public Triangle(int width, int height)
         {
-            this.height = height;
-            this.width = width;
+            Height = height;
+            Width = width;
         }
-        public override int CalculateSurface()
+        public override double CalculateSurface()
         {
-            return (height * width) / 2;
+            return (Height * Width) / 2;
         }
     }
 }

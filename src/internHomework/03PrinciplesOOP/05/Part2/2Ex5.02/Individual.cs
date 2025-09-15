@@ -2,15 +2,9 @@
 {
     class Individual : Customer
     {
-        private string customerName;
-        public override string CustomerName 
-        {
-            get { return customerName; }
-            set { customerName = value; }
-        }
         public Individual(string firstName, string lastName) 
         {
-            customerName = firstName + " " + lastName;
+            CustomerName = firstName + " " + lastName;
         }
         
     }

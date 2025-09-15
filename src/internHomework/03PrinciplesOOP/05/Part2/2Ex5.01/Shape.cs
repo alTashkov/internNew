@@ -2,10 +2,10 @@
 {
     public abstract class Shape
     {
-        public abstract int Width { get; set; }
+        public double Width { get; protected set; }
 
-        public abstract int Height { get; set; }
+        public double Height { get; protected set; }
 
-        public abstract int CalculateSurface();
+        public abstract double CalculateSurface();
     }
 }

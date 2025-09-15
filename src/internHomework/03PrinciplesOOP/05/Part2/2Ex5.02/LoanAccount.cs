@@ -1,52 +1,28 @@
 ﻿namespace _2Ex5._02
 {
-    class LoanAccount : Account, IWithdraw
+    class LoanAccount : Account, IDeposit
     {
-        private long balance;
-
-        private double interestRate;
-
-        private Customer customer;
-
-        public override long Balance 
-        {
-            get { return balance; }
-            set { balance = value; }
-        }
-
-        public override double InterestRate
-        {
-            get { return interestRate; }
-            set { interestRate = value; }
-        }
-
-        public override Customer AccountCustomer
-        {
-            get { return customer; }
-            set {  customer = value; }
-        }
-
         public LoanAccount(Customer customer)
         {
-            this.customer = customer;
+            AccountCustomer = customer;
         }
 
         public override double CalculateInterestAmount(double numberOfMonths)
         {
-            if (numberOfMonths <= 3 && (customer.GetType() == typeof(Individual)))
+            if (numberOfMonths <= 3 && (AccountCustomer.GetType() == typeof(Individual)))
             {
-                interestRate = 0;
+                return 0;
             }
-            else if(numberOfMonths <= 2 && (customer.GetType() == typeof(Company)))
+            else if(numberOfMonths <= 2 && (AccountCustomer.GetType() == typeof(Company)))
             {
-                interestRate = 0;
+                return 0;
             }
-            return numberOfMonths * interestRate;
+            return numberOfMonths * InterestRate;
         }
 
-        public void Withdraw(double amount)
+        public void Deposit(double amount)
         {
-            balance -= (long)amount;
+            Balance += (decimal)amount;
         }
     }
 }
