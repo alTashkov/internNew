@@ -3,76 +3,63 @@ namespace Ex5._02
 {
     class Worker : Human
     {
-        private string firstName;
-        private string lastName;
-
-        private double weekSalary;
+        private decimal weekSalary;
         private double workHoursPerDay;
 
-        public override string FirstName
-        {
-            get { return firstName; }
-            set
-            {
-                if (!(value is string))
-                {
-                    throw new ArgumentException("The provided first name must be of type string!");
-                }
-                firstName = value;
-            }
-        }
-
-        public override string LastName
-        {
-            get { return lastName; }
-            set
-            {
-                if (!(value is string))
-                {
-                    throw new ArgumentException("The provided last name must be of type string!");
-                }
-                lastName = value;
-            }
-        }
-
-        public double WeekSalary { 
+        public decimal WeekSalary { 
             get
             {
+                if (weekSalary < 0)
+                {
+                    throw new ArgumentException("Invalid amount for the salary (cannot be less than 0)!");
+                }
                 return weekSalary;
             }
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Invalid amount for the salary (cannot be less than 0)!");
+                }
                 weekSalary = value;
             }
         }
         public double WorkHoursPerDay {  
             get
             {
+                if (workHoursPerDay < 0 || workHoursPerDay > 24)
+                {
+                    throw new ArgumentException("Invalid amount of hours per day!");
+                }
                 return workHoursPerDay;
             }
             set
             {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Invalid amount of hours per day!");
+                }
                 workHoursPerDay = value;
             }
         }
 
         public Worker(string firstName, string lastName)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
+            FirstName = firstName;
+            LastName = lastName;
         }
 
-        public Worker(string firstName, string lastName, double weekSalary, double workHoursPerDay)
+        public Worker(string firstName, string lastName, decimal weekSalary, double workHoursPerDay)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.weekSalary = weekSalary;
-            this.workHoursPerDay = workHoursPerDay;
+            FirstName = firstName;
+            LastName = lastName;
+            WeekSalary = weekSalary;
+            WorkHoursPerDay = workHoursPerDay;
         }
 
-        public double MoneyPerHour()
+        public decimal MoneyPerHour()
         {
-            return weekSalary / (5 * workHoursPerDay);
+            return (decimal)((double)WeekSalary / (5 * WorkHoursPerDay));
         }
     }
 }

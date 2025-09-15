@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace School
 {
-    class Class : IHaveComments
+    internal class Class : ICommentable
     {
         private string comments;
 
@@ -37,26 +37,26 @@ namespace School
         public Class(string uniqueId)
         {
             UniqueIdentifier = uniqueId;
-            teachers = new HashSet<Teacher>();
-            students = new HashSet<Student>();
+            Teachers = new HashSet<Teacher>();
+            Students = new HashSet<Student>();
         }
         public Class(string uniqueId, HashSet<Teacher> teachers)
         {
             UniqueIdentifier = uniqueId;
-            this.teachers = teachers;
-            students = new HashSet<Student>();
+            Teachers = teachers;
+            Students = new HashSet<Student>();
         }
         public Class(string uniqueId, HashSet<Teacher> teachers, HashSet<Student> students)
         {
             UniqueIdentifier = uniqueId;
-            this.teachers = teachers;
-            this.students = students;
+            Teachers = teachers;
+            Students = students;
         }
         public void AddTeacher(Teacher teacher)
         {
             if (teachers.Contains(teacher))
             {
-                throw new ArgumentException("This teacher is already teaching this student!");
+                throw new ArgumentException("This teacher already teaches this class!");
             }
             teachers.Add(teacher);
         }
@@ -65,7 +65,7 @@ namespace School
         {
             if (!teachers.Contains(teacher))
             {
-                throw new ArgumentException("This teacher doesn't teach this student!");
+                throw new ArgumentException("This teacher doesn't teach this class!");
             }
             teachers.Remove(teacher);
         }
@@ -74,7 +74,7 @@ namespace School
         {
             if (students.Contains(student))
             {
-                throw new ArgumentException("This teacher doesn't teach this student!");
+                throw new ArgumentException("This student is already in this class!");
             }
             students.Add(student);
         }
@@ -83,9 +83,9 @@ namespace School
         {
             if (!students.Contains(student))
             {
-                throw new ArgumentException("This teacher doesn't teach this student!");
+                throw new ArgumentException("This student is not in this class!");
             }
-            students.Add(student);
+            students.Remove(student);
         }
 
         public void AddComments(string comments)

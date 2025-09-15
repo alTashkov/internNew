@@ -1,6 +1,6 @@
 ﻿namespace School
 {
-    abstract class People : IHaveComments
+    internal abstract class People : ICommentable
     {
         private string name;
 
@@ -20,6 +20,5 @@
         {
             this.comments = comments;
         }
-
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace School
 {
-    class Teacher : People
+    internal class Teacher : People
     {
         private HashSet<Discipline> disciplines;
 
@@ -32,14 +32,14 @@ namespace School
             Name = name;
             disciplines = new HashSet<Discipline>();
             AddComments(comments);
-            this.amountOfClasses = amountOfClasses;
+            AmountOfClasses = amountOfClasses;
         }
         public Teacher(string name, string classIdentifier, string comments, int amountOfClasses, HashSet<Discipline> disciplines)
         {
             Name = name;
             this.disciplines = disciplines;
             AddComments(comments);
-            this.amountOfClasses = amountOfClasses;
+            AmountOfClasses = amountOfClasses;
         }
 
         //public void AddClass(Class classToTeach)

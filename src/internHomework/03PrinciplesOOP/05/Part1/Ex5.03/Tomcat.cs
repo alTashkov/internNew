@@ -1,37 +1,14 @@
 ﻿using System;
 namespace Ex5._03
 {
-    class Tomcat : Animal
+    class Tomcat : Cat
     {
-        private string name;
-
-        private int age;
-
-        private bool isMale;
-
-        public override string Name
+        public Tomcat(string name, int age, bool isMale = true) 
+            :base(name, age, isMale)
         {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public override int Age
-        {
-            get { return age; }
-            set { age = value; }
-        }
-
-        public override bool IsMale
-        {
-            get { return isMale; }
-            set { isMale = true; }
-        }
-
-        public Tomcat(string name, int age)
-        {
-            this.name = name;
-            this.age = age;
-            isMale = true;
+            Name = name;
+            Age = age;
+            IsMale = true;
         }
 
         public override void MakeSound()

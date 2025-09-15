@@ -1,37 +1,13 @@
 ﻿using System;
 namespace Ex5._03
 {
-    class Cat : Animal
+    internal class Cat : Animal
     {
-        private string name;
-
-        private int age;
-
-        private bool isMale;
-
-        public override string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public override int Age
-        {
-            get { return age; }
-            set { age = value; }
-        }
-
-        public override bool IsMale
-        {
-            get { return isMale; }
-            set { isMale = value; }
-        }
-
         public Cat(string name, int age, bool isMale)
         {
-            this.name = name;
-            this.age = age;
-            this.isMale = isMale;
+            Name = name;
+            Age = age;
+            IsMale = isMale;
         }
 
         public override void MakeSound()

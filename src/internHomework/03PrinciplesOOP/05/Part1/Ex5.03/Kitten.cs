@@ -1,37 +1,14 @@
 ﻿using System;
 namespace Ex5._03
 {
-    class Kitten : Animal
+    class Kitten : Cat
     {
-        private string name;
-
-        private int age;
-
-        private bool isMale;
-
-        public override string Name
+        public Kitten(string name, int age, bool isMale = false)
+            :base(name, age, isMale) 
         {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public override int Age
-        {
-            get { return age; }
-            set { age = value; }
-        }
-
-        public override bool IsMale
-        {
-            get { return isMale; }
-            set { isMale = false; }
-        }
-
-        public Kitten(string name, int age)
-        {
-            this.name = name;
-            this.age = age;
-            isMale = false;
+            Name = name;
+            Age = age;
+            IsMale = false;
         }
 
         public override void MakeSound()

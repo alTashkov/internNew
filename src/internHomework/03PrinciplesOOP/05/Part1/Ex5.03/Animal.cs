@@ -2,11 +2,11 @@
 {
     public abstract class Animal : ISound
     {
-        public abstract string Name { get; set; }
+        public string Name { get; protected set; }
 
-        public abstract int Age { get; set; }
+        public int Age { get; protected set; }
 
-        public abstract bool IsMale { get; set; }
+        public bool IsMale { get; protected set; }
 
         public abstract void MakeSound();
     }

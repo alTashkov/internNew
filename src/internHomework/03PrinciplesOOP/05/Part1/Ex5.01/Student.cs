@@ -1,22 +1,22 @@
 ﻿namespace School
 {
-    class Student : People
+    internal class Student : People
     {
-        private string classIdentifier;
+        private string uniqueClassNumber;
 
-        public string ClassIdentifier
+        public string UniqueClassNumber
         {
-            get { return classIdentifier; }
+            get { return uniqueClassNumber; }
             private set
             {
-                classIdentifier = value;
+                uniqueClassNumber = value;
             }
         }
 
-        public Student(string name, string classIdentifier, string comments)
+        public Student(string name, string uniqueClassNumber, string comments)
         {
             Name = name;
-            this.classIdentifier = classIdentifier;
+            UniqueClassNumber = uniqueClassNumber;
             AddComments(comments);
         }
     }

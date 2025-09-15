@@ -1,7 +1,8 @@
 ﻿namespace School
 {
-    public interface IHaveComments
+    public interface ICommentable
     {
         void AddComments(string comments);
+        //void ReadComments(string comment);
     }
 }

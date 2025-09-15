@@ -70,13 +70,10 @@ namespace Ex5._02
             workers.Add(worker9);
             workers.Add(worker10);
 
-            random = new Random();
-
             for (int i = 0; i < workers.Count; i++)
             {
                 workers[i].WeekSalary = random.Next(300,400);
                 workers[i].WorkHoursPerDay = random.Next(7,9);
-                workers[i].MoneyPerHour();
             }
 
             workers = workers.OrderByDescending(x => x.MoneyPerHour()).ToList();

@@ -1,6 +1,6 @@
 ﻿namespace School
 {
-    class Discipline : IHaveComments
+    internal class Discipline : ICommentable
     {
         private string comments;
         private string name;
@@ -30,7 +30,7 @@
             get { 
                 return numberOfLectures;
             }
-            set {
+            private set {
                 numberOfLectures = value;
             }
         }
@@ -46,9 +46,9 @@
 
         public Discipline(string name, int numberOfLectures, int numberOfExercises)
         {
-            this.name = name;
-            this.numberOfLectures = numberOfLectures;
-            this.numberOfExercises = numberOfExercises;
+            Name = name;
+            NumberOfLectures = numberOfLectures;
+            NumberOfExercises = numberOfExercises;
         }
 
         public void AddComments(string comments)
