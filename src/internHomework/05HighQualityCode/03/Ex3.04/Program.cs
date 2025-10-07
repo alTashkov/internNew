@@ -40,7 +40,7 @@ namespace Ex3._04
 
 			int counter = 0;
 
-			bool explosion = false;
+			bool isExplosion = false;
 
 			List<Player> players = new List<Player>(6);
 
@@ -48,12 +48,12 @@ namespace Ex3._04
 			int column = 0;
             const int max = 35;
 
-            bool lose = true;
-			bool win = false;
+            bool isGameOver = true;
+			bool isWin = false;
 
 			do
 			{
-				if (lose)
+				if (isGameOver)
 				{
 					Console.WriteLine(
 						"Let's play \"Mines\". " +
@@ -64,7 +64,7 @@ namespace Ex3._04
 
 					PrintBoard(field);
 
-					lose = false;
+					isGameOver = false;
 				}
 
 				Console.Write("Enter row and column: ");
@@ -91,8 +91,8 @@ namespace Ex3._04
 
 						PrintBoard(field);
 
-						explosion = false;
-						lose = false;
+						isExplosion = false;
+						isGameOver = false;
 
 						break;
 					case "exit":
@@ -109,7 +109,7 @@ namespace Ex3._04
 
 							if (max == counter)
 							{
-								win = true;
+								isWin = true;
 							}
 							else
 							{
@@ -118,7 +118,7 @@ namespace Ex3._04
 						}
 						else
 						{
-							explosion = true;
+							isExplosion = true;
 						}
 
 						break;
@@ -126,7 +126,7 @@ namespace Ex3._04
 						Console.WriteLine("\nError! Invalid command!\n");
 						break;
 				}
-				if (explosion)
+				if (isExplosion)
 				{
 					PrintBoard(bombs);
 
@@ -169,10 +169,10 @@ namespace Ex3._04
 
 					counter = 0;
 
-					explosion = false;
-					lose = true;
+					isExplosion = false;
+					isGameOver = true;
 				}
-				if (win)
+				if (isWin)
 				{
 					Console.WriteLine(
 						"\nBravo! You opened 35 cells " +
@@ -192,8 +192,8 @@ namespace Ex3._04
 					field = CreateField();
 					bombs = PlaceBombs();
 					counter = 0;
-					win = false;
-					lose = true;
+					isWin = false;
+					isGameOver = true;
 				}
 			}
 
@@ -293,26 +293,26 @@ namespace Ex3._04
 				}
 			}
 
-			List<int> r3 = new List<int>();
+			List<int> bombPositions = new List<int>();
 
-			while (r3.Count < 15)
+			while (bombPositions.Count < 15)
 			{
 				Random random = new Random();
 
-				int asfd = random.Next(50);
+				int randomPosition = random.Next(50);
 				
-				if (!r3.Contains(asfd))
+				if (!bombPositions.Contains(randomPosition))
 				{
-					r3.Add(asfd);
+					bombPositions.Add(randomPosition);
 				}
 			}
 
-			foreach (int i2 in r3)
+			foreach (int position in bombPositions)
 			{
-				int newColumns = (i2 / columns);
-				int newRows = (i2 % columns);
+				int newColumns = (position / columns);
+				int newRows = (position % columns);
 
-				if (newRows == 0 && i2 != 0)
+				if (newRows == 0 && position != 0)
 				{
 					newColumns--;
 					newRows = columns;
