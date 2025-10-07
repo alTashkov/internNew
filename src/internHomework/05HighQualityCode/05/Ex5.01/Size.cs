@@ -2,7 +2,6 @@
 
 namespace Ex5._01
 {
-    //to finish
     public class Size
     {
         public double width, height;
@@ -10,19 +9,20 @@ namespace Ex5._01
         public Size(double width, double height)
         {
             this.width = width;
-            this.width = height;
+            this.height = height;
         }
 
         public static Size GetRotatedSize(
             Size size, 
-            double angleOfTheFigureThatWillBeRotated)
+            double angleInDegrees)
         {
+            double angleInRadians = angleInDegrees * Math.PI / 180;
 
-            double sinValueOfAngle = Math.Sin(angleOfTheFigureThatWillBeRotated);
-            double cosValueOfAngle = Math.Cos(angleOfTheFigureThatWillBeRotated);
+            double sin = Math.Sin(angleInRadians);
+            double cos = Math.Cos(angleInRadians);
 
-            double rotatedWidth = Math.Abs(cosValueOfAngle * size.width);
-            double rotatedHeight = Math.Abs(sinValueOfAngle * size.height);
+            double rotatedWidth = Math.Abs(cos * size.width) + Math.Abs(sin * size.height);
+            double rotatedHeight = Math.Abs(sin * size.width) + Math.Abs(cos * size.height);
 
             return new Size(rotatedWidth, rotatedHeight);
         }
