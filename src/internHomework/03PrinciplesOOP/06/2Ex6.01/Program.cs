@@ -1,20 +1,19 @@
-﻿using _2Ex6._01._2Ex5._03;
+﻿using System;
 namespace _2Ex6._01
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            int[] array = new int[10];
-            int start = 0;
-            int end = 0;
+            int start;
+            int end;
 
             Random rnd = new Random();
             try
             {
-                start = rnd.Next(1, 20);
-                end = rnd.Next(1, 10);
-                if (start > end)
+                start = rnd.Next(-30, 10);
+                end = rnd.Next(50, 150);
+                if (start < 1 || end > 100)
                 {
                     throw new InvalidRangeException<int>(start, end);
                 }

@@ -9,7 +9,8 @@
 
         public override double CalculateInterestAmount(double numberOfMonths)
         {
-            if (numberOfMonths <= 3 && (AccountCustomer.GetType() == typeof(Individual)))
+            if (numberOfMonths <= 3 
+                && (AccountCustomer.GetType() == typeof(Individual)))
             {
                 return 0;
             }

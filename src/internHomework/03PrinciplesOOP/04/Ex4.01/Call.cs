@@ -12,6 +12,7 @@
             get { return dateTimeOfCall; }
             set { dateTimeOfCall = value; }
         }
+
         public string PhoneDialed
         {
             get { return phoneDialed; }
@@ -28,6 +29,7 @@
                 callDurationSeconds = value;
             }
         }
+
         public Call() { }
 
         public Call(DateTime dateTimeOfCall, string phoneDialed, long callDurationSeconds)
@@ -41,6 +43,7 @@
         {
             return $"Call to {phoneDialed} on {dateTimeOfCall.Day}.{dateTimeOfCall.Month}.{dateTimeOfCall.Year} at {dateTimeOfCall.Hour} o'clock with duration {(callDurationSeconds/60):F2} minutes.";
         }
+
         public double CalculateCallPrice(double pricePerMinute)
         {
             double calculatedPrice = (this.CallDurationSeconds / 60) * pricePerMinute;

@@ -14,9 +14,9 @@
         private string email;
 
         private string course;
-        private string specialty;
-        private string university;
-        private string faculty;
+        private Specialties specialty;
+        private Universities university;
+        private Faculties faculty;
 
         public string Name
         {
@@ -58,13 +58,13 @@
             }
         }
 
-        public string Specialty
+        public Specialties Specialty
         {
             get { return specialty; }
             set { specialty = value; }
         }
 
-        public string University
+        public Universities Univeristy
         {
             get { return university; }
             set => university = value;
@@ -82,7 +82,7 @@
             }
         }
 
-        public string Faculty
+        public Faculties Faculty
         {
             get { return faculty; }
             set { faculty = value; }
@@ -93,26 +93,20 @@
             this.firstName = firstName;
             this.middleName = middleName;
             this.lastName = lastName;
-            this.ssn = ssn;
+            SSN = ssn;
             this.permanentAddress = permanentAddress;
-            this.phoneNumber = phoneNumber;
-            this.email = email;
-            this.course = course;
-            this.specialty = specialty;
-            this.university = university;
-            this.faculty = faculty;
-            this.ssn = ssn;
-            this.phoneNumber = phoneNumber;
-            this.email = email;
-            this.specialty = specialty;
-            this.university = university;
-            this.course = course;
-            this.faculty = faculty;
+            PhoneNumber = phoneNumber;
+            Email = email;
+            Course = course;
+            Specialty = Enum.Parse<Specialties>(specialty);
+            Univeristy = Enum.Parse<Universities>(university);
+            Faculty = Enum.Parse<Faculties>(faculty);
+
         }
 
         public object Clone()
         {
-            return new Student(this.firstName, this.middleName, this.lastName, this.ssn, this.permanentAddress, this.phoneNumber, this.email, this.course, this.specialty, this.university, this.faculty);
+            return MemberwiseClone();
         }
 
         public override string ToString()
@@ -128,6 +122,8 @@
 
         public override bool Equals(object obj)
         {
+            if (obj == null) return false;
+
             if (obj is Student other)
             {
                 if (SSN == other.SSN)
@@ -139,20 +135,20 @@
         }
 
         public static bool operator == (Student student1, Student student2){
+            if (ReferenceEquals(student1, student2)) return true;
+            if (student1 is null || student2 is null) return false;
+
             if (student1.Equals(student2))
             {
                 return true;
             }
+
             return false;
          }
 
         public static bool operator != (Student student1, Student student2)
         {
-            if (!(student1.Equals(student2)))
-            {
-                return true;
-            }
-            return false;
+            return !(student1 == student2); 
         }
 
     }

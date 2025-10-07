@@ -29,6 +29,7 @@ namespace _4._02
             }
 
             string points = stringBuilder.ToString();
+
             return points;
         }
     }

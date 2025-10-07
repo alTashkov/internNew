@@ -63,12 +63,15 @@
   <ItemGroup>
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="BitArray64.cs" />
+    <Compile Include="Faculties.cs" />
+    <Compile Include="Specialties.cs" />
     <Compile Include="InvalidRangeException.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="Universities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

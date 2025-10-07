@@ -21,7 +21,7 @@ namespace _2Ex6._01
                     throw new IndexOutOfRangeException("Index must be between 0 and 63.");
                 }
 
-                return (int)(values64 & (1UL << index));
+                return (int)((values64 >> index ) & 1UL);
             }
             set
             {
