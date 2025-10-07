@@ -6,6 +6,7 @@ namespace Ex5._01
     public class Size
     {
         public double width, height;
+
         public Size(double width, double height)
         {
             this.width = width;
