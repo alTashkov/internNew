@@ -10,32 +10,32 @@ namespace Ex5._02
     {
         public void PrintStatistics(double[] arr, int count)
         {
-            double maxValue = 0;
-            for (int i = 0; i < count; i++)
-            {
-                if (arr[i] > maxValue)
-                {
-                    maxValue = arr[i];
-                }
-            }
-            Console.WriteLine("Maximum value: " + maxValue);
-
-            double minValue = maxValue;
-            for (int i = 0; i < count; i++)
-            {
-                if (arr[i] < minValue)
-                {
-                    minValue = arr[i];
-                }
-            }
-            Console.WriteLine("Minimum value: " + minValue);
-
+            double maxValue = arr[0];
+            double minValue = arr[0];
             double sumOfValues = 0;
+
             for (int i = 0; i < count; i++)
             {
-                sumOfValues += arr[i];
+                double currentValue = arr[i];
+
+                if (currentValue > maxValue)
+                {
+                    maxValue = currentValue;
+                }
+                
+                if (currentValue < minValue)
+                {
+                    minValue = currentValue;
+                }
+
+                sumOfValues += currentValue;
             }
-            Console.WriteLine("Average value: " + sumOfValues / count);
+
+            double averageValue = sumOfValues / count;
+
+            Console.WriteLine("Maximum value: " + maxValue);
+            Console.WriteLine("Minimum value: " + minValue);
+            Console.WriteLine("Average value: " + averageValue);
         }
     }
 }
