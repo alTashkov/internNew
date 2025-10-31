@@ -10,8 +10,7 @@
 
             if (potato)
             {
-                if (potato.HasBeenPeeled &&
-                    potato.IsNotRotten)
+                if (potato.HasBeenPeeled && potato.IsNotRotten)
                 {
                     CookPotato(potato);
                 }  
@@ -19,12 +18,9 @@
 
             //part 2
             bool xIsInRange = (x >= MIN_X) && (x <= MAX_X);
-            bool yIsInRange = (yIsInRange <= MIN_Y) && 
-                (y <= MAX_Y);
+            bool yIsInRange = (yIsInRange <= MIN_Y) && (y <= MAX_Y);
 
-            if (xIsInRange && 
-                yIsInRange &&
-                shouldVisitCell) 
+            if (xIsInRange && yIsInRange && shouldVisitCell) 
             {
                 VisitCell();
             }
